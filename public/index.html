@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tchat - exemple</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div id="connexion"></div>
+<script>
+    $(document).ready(function(){
+      var socket = io();
+      socket.emit('userConnexion', 'user socket connected' );
+      socket.on('userConnexion', function(data){
+        $("#connexion").text(data);
+      })
+    });
+</script>
+</body>
+</html>
